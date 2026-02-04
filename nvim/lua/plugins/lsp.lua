@@ -6,7 +6,7 @@ return {
       "neovim/nvim-lspconfig",
     },
     opts = {
-      ensure_installed = {},
+      ensure_installed = { "lua_ls" },
     },
   },
   {
