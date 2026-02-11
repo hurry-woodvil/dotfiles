@@ -10,7 +10,19 @@ return {
         require("config.language.lua").server_name,
         require("config.language.lua").formatter_name,
       },
+      automatic_enable = {
+        exclude = {
+          require("config.language.rust").server_name,
+          require("config.language.rust").formatter_name,
+        },
+      },
     },
+    config = function(_, opts)
+      require("mason-lspconfig").setup(opts)
+
+      -- rust LSP ON
+      vim.lsp.enable(require("config.language.rust").server_name)
+    end,
   },
   {
     "mason-org/mason.nvim",
