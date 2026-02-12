@@ -13,3 +13,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keymaps.on_attach(client, bufnr)
   end,
 })
+
+local orig_register = vim.lsp.handlers["client/registerCapability"]
+
+vim.lsp.handlers["client/registerCapability"] = function(err, result, ctx, config)
+  local client = vim.lsp.get_client_by_id(ctx.client_id)
+
+  local ret = orig_register(err, result, ctx, config)
+
+  if client then
+    for bufnr in pairs(client.attached_buffers) do
+      require("config.keymaps").on_attach(client, bufnr)
+    end
+  end
+
+  return ret
+end

@@ -1,6 +1,7 @@
 return {
   {
     "saghen/blink.cmp",
+    build = "cargo build --release",
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = {
       keymap = { preset = "default" },
@@ -9,7 +10,7 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
       },
-      fuzzy = { implementation = "prefer_rust_with_warning" }
+      fuzzy = { implementation = "prefer_rust" },
     },
   },
 }
