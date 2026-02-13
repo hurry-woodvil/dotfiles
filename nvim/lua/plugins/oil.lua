@@ -21,6 +21,26 @@ return {
         { "size" },
         { "mtime" },
       },
+      win_options = {
+        signcolumn = "yes:2",
+      },
     },
+  },
+  {
+    "refractalize/oil-git-status.nvim",
+    dependencies = {
+      "stevearc/oil.nvim",
+    },
+    opts = {},
+  },
+  {
+    "benomahony/oil-git.nvim",
+    dependencies = { "stevearc/oil.nvim" },
+    opts = {},
+  },
+  {
+    "JezerM/oil-lsp-diagnostics.nvim",
+    dependencies = { "stevearc/oil.nvim" },
+    opts = {},
   },
 }
