@@ -3,10 +3,14 @@ return {
     "zbirenbaum/copilot.lua",
     dependencies = {
       "copilotlsp-nvim/copilot-lsp",
+      "giuxtaposition/blink-cmp-copilot",
     },
     cmd = "Copilot",
     event = "InsertEnter",
-    opts = {},
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
