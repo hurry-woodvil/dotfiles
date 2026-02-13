@@ -31,16 +31,16 @@ vim.lsp.handlers["client/registerCapability"] = function(err, result, ctx, confi
 end
 
 local function refresh_oil_all_windows()
-  local ok, oil = pcall(require, "oil")
+  local ok, oil_git_status = pcall(require, "oil-git-status")
   if not ok then
     return
   end
 
   for _, win in ipairs(vim.api.nvim_list_wins()) do
-    local buf = vim.api.nvim_win_get_buf(win)
-    if vim.bo[buf].filetype == "oil" then
-      vim.api.nvim_buf_call(buf, function()
-        oil.refresh()
+    local bufnr = vim.api.nvim_win_get_buf(win)
+    if vim.bo[bufnr].filetype == "oil" then
+      vim.api.nvim_buf_call(bufnr, function()
+        oil_git_status.refresh_buffer(bufnr)
       end)
     end
   end
