@@ -1,7 +1,7 @@
 return {
   {
     "mfussenegger/nvim-dap",
-    opts = require("plugins.debug.opts").get_opts(),
+    opts = require("utils.debug").get_opts(),
     config = function(_, opts)
       local dap = require("dap")
 
