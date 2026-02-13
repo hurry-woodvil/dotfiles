@@ -29,3 +29,31 @@ vim.lsp.handlers["client/registerCapability"] = function(err, result, ctx, confi
 
   return ret
 end
+
+local function refresh_oil_all_windows()
+  local ok, oil = pcall(require, "oil")
+  if not ok then
+    return
+  end
+
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    if vim.bo[buf].filetype == "oil" then
+      vim.api.nvim_buf_call(buf, function()
+        oil.refresh()
+      end)
+    end
+  end
+end
+
+vim.api.nvim_create_autocmd("TermClose", {
+  group = vim.api.nvim_create_augroup("RefreshOilAfterLazyGit", { clear = true }),
+  callback = function(args)
+    local ft = vim.bo[args.buf].filetype
+    local name = vim.api.nvim_buf_get_name(args.buf)
+
+    if ft == "lazygit" or name:lower():find("lazygit") then
+      vim.schedule(refresh_oil_all_windows)
+    end
+  end,
+})
