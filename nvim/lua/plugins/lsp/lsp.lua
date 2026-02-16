@@ -9,6 +9,7 @@ return {
       ensure_installed = {
         require("config.language.lua").server_name,
         require("config.language.lua").formatter_name,
+        require("config.language.toml").server_name,
       },
       automatic_enable = {
         exclude = {

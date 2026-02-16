@@ -5,6 +5,7 @@ return {
       formatters_by_ft = {
         lua = { require("config.language.lua").formatter_name },
         rust = { require("config.language.rust").formatter_name },
+        toml = { require("config.language.toml").server_name },
       },
       format_on_save = {
         timeout_ms = 500,
