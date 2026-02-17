@@ -43,6 +43,8 @@ keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv
 
 keymap.set("n", "<esc><esc>", "<cmd>nohlsearch<cr>", { desc = "Clear Highlight Search" })
 
+keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+
 local M = {}
 
 --- @param bufnr integer
