@@ -4,12 +4,19 @@ return {
     dependencies = {
       "mason-org/mason.nvim",
       "neovim/nvim-lspconfig",
+      "b0o/schemastore.nvim",
     },
     opts = {
       ensure_installed = {
         require("config.language.lua").server_name,
-        require("config.language.lua").formatter_name,
         require("config.language.toml").server_name,
+        require("config.language.typescript").server_name,
+        require("config.language.javascript").server_name,
+        require("config.language.json").server_name,
+        require("config.language.html").server_name,
+        require("config.language.css").server_name,
+        require("config.language.emmet").server_name,
+        require("config.language.tailwindcss").server_name,
       },
       automatic_enable = {
         exclude = {
@@ -18,6 +25,7 @@ return {
         },
       },
     },
+    ---@param opts MasonLspconfigSettings
     config = function(_, opts)
       require("mason-lspconfig").setup(opts)
 
@@ -44,6 +52,22 @@ return {
       -- rust LSP ON
       vim.lsp.enable(require("config.language.rust").server_name)
     end,
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    dependencies = {
+      "mason-org/mason.nvim",
+    },
+    opts = {
+      ensure_installed = {
+        require("config.language.lua").formatter_name,
+        require("config.language.typescript").formatter_name,
+        require("config.language.javascript").formatter_name,
+        require("config.language.html").formatter_name,
+        require("config.language.css").formatter_name,
+        require("config.language.eslint").server_name,
+      },
+    },
   },
   {
     "mason-org/mason.nvim",

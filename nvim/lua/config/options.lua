@@ -9,6 +9,8 @@ local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 
+opt.scrolloff = 4
+
 opt.clipboard = "unnamedplus"
 opt.shiftwidth = 2
 

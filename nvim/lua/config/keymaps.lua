@@ -13,6 +13,10 @@ safe_del("i", "<C-S>")
 safe_del({ "x", "o" }, "an")
 safe_del({ "x", "o" }, "in")
 
+local function delete_lsp_default_keymap_buffer(bufnr)
+  pcall(vim.keymap.del, "n", "<C-k>", { buffer = bufnr })
+end
+
 local keymap = vim.keymap
 
 -- better up/down
@@ -52,6 +56,7 @@ function M.reset(bufnr)
   vim.bo[bufnr].omnifunc = nil
   vim.bo[bufnr].tagfunc = nil
   vim.bo[bufnr].formatexpr = nil
+  delete_lsp_default_keymap_buffer(bufnr)
 end
 
 --- @param client vim.lsp.Client
@@ -94,7 +99,7 @@ function M.on_attach(client, bufnr)
   end
 
   if client:supports_method("textDocument/signatureHelp") then
-    map({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "LSP: Signature Help")
+    map("i", "<C-k>", vim.lsp.buf.signature_help, "LSP: Signature Help")
   end
 
   if client:supports_method("textDocument/rename") then
