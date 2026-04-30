@@ -15,6 +15,7 @@ return {
         scss = { require("config.language.css").formatter_name },
         json = { require("config.language.json").formatter_name },
         jsonc = { require("config.language.json").formatter_name },
+        go = require("config.language.golang").formatter_name,
       },
       format_on_save = {
         timeout_ms = 500,

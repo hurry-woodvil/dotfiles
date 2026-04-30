@@ -17,6 +17,7 @@ return {
         require("config.language.css").server_name,
         require("config.language.emmet").server_name,
         require("config.language.tailwindcss").server_name,
+        require("config.language.golang").server_name,
       },
       automatic_enable = {
         exclude = {
@@ -59,14 +60,14 @@ return {
       "mason-org/mason.nvim",
     },
     opts = {
-      ensure_installed = {
+      ensure_installed = vim.list_extend({
         require("config.language.lua").formatter_name,
         require("config.language.typescript").formatter_name,
         require("config.language.javascript").formatter_name,
         require("config.language.html").formatter_name,
         require("config.language.css").formatter_name,
         require("config.language.eslint").server_name,
-      },
+      }, require("config.language.golang").formatter_name),
     },
   },
   {

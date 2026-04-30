@@ -15,6 +15,7 @@ return {
         "typescript",
         "tsx",
         "json",
+        "go",
       },
       indent = { enable = true },
       highlight = {
@@ -39,6 +40,7 @@ return {
         "typescript",
         "tsx",
         "json",
+        "go",
       }):wait(30000)
 
       vim.api.nvim_create_autocmd("FileType", {
