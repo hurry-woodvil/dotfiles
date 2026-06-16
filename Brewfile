@@ -1,0 +1,31 @@
+# Formula
+brew "starship"
+brew "zoxide"
+brew "fzf"
+brew "fd"
+brew "ripgrep"
+brew "eza"
+brew "bat"
+brew "jq"
+brew "yq"
+brew "lazygit"
+brew "tree"
+brew "zinit"
+
+# Cask
+cask "google-chrome"
+cask "figma"
+cask "github"
+cask "notion"
+cask "postman"
+cask "visual-studio-code"
+cask "zoom"
+cask "microsoft-teams"
+cask "karabiner-elements"
+cask "appcleaner"
+cask "chatgpt"
+cask "logi-options+"
+cask "nani"
+
+# Fonts
+cask "font-udev-gothic"

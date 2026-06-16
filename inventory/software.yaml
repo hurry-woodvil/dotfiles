@@ -1,0 +1,82 @@
+applications:
+  homebrew:
+    - name: AppCleaner
+      package: appcleaner
+
+    - name: ChatGPT
+      package: chatgpt
+
+    - name: Docker Desktop
+      package: docker-desktop
+      aliases:
+        - Docker
+
+    - name: Figma
+      package: figma
+
+    - name: GitHub Desktop
+      package: github
+
+    - name: Google Chrome
+      package: google-chrome
+
+    - name: Karabiner-Elements
+      package: karabiner-elements
+      aliases:
+        - Karabiner-EventViewer
+        - .Karabiner-VirtualHIDDevice-Manager
+
+    - name: Logi Options+
+      package: logi-options+
+      aliases:
+        - logioptionsplus
+
+    - name: Microsoft Teams
+      package: microsoft-teams
+
+    - name: Nani
+      package: nani
+
+    - name: Notion
+      package: notion
+
+    - name: Postman
+      package: postman
+
+    - name: Visual Studio Code
+      package: visual-studio-code
+
+    - name: WezTerm
+      package: wezterm@nightly
+
+    - name: Zoom
+      package: zoom
+      aliases:
+        - zoom.us
+
+  app_store:
+    - name: Goodnotes
+      path: /Applications/Goodnotes.app
+
+  manual:
+    - name: LINE
+      path: /Applications/LINE.app
+      reason: Homebrew Caskなし
+
+    - name: HakoJournal
+      path: /Applications/HakoJournal.app
+
+    - name: MouseAssistant
+      path: /Applications/MouseAssistant.app
+
+    - name: Minecraft
+      path: /Applications/Minecraft.app
+      reason: 開発環境ではない
+
+    - name: Vimari
+      path: /Applications/Vimari.app
+      reason: Homebrew Caskなし
+
+  macos:
+    - name: Safari
+      path: /Applications/Safari.app
