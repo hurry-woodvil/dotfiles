@@ -26,6 +26,7 @@ cask "appcleaner"
 cask "chatgpt"
 cask "logi-options+"
 cask "nani"
+cask "obsidian"
 
 # Fonts
 cask "font-udev-gothic"
