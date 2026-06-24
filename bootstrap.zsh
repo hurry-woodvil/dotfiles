@@ -99,6 +99,10 @@ link_gh() {
   link_config_dir gh
 }
 
+link_nvim() {
+  link_config_dir nvim
+}
+
 main() {
   install_homebrew_packages
 
@@ -108,6 +112,7 @@ main() {
   link_tmux
   link_karabiner
   link_gh
+  link_nvim
 
   success "dotfiles bootstrap completed"
 }
