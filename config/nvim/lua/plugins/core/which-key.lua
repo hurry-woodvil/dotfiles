@@ -1,60 +1,60 @@
 return {
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
     opts = {
-      preset = "helix",
+      preset = 'helix',
       spec = {
-        mode = { "n", "x" },
-        { "<leader><tab>", group = "tabs" },
-        { "<leader>c", group = "code" },
-        { "<leader>d", group = "debug" },
-        { "<leader>dp", group = "profiler" },
-        { "<leader>e", group = "explorer" },
-        { "<leader>f", group = "file/find" },
-        { "<leader>g", group = "git" },
-        { "<leader>gh", group = "hunks" },
-        { "<leader>q", group = "quit/session" },
-        { "<leader>s", group = "search" },
-        { "<leader>u", group = "ui" },
-        { "<leader>x", group = "diagnostics/quicfix" },
-        { "<leader>[", group = "prev" },
-        { "<leader>]", group = "next" },
-        { "g", group = "goto" },
-        { "<leader>gs", group = "surround" },
-        { "<leader>z", group = "fold" },
+        mode = { 'n', 'x' },
+        { '<leader><tab>', group = 'tabs' },
+        { '<leader>c', group = 'code' },
+        { '<leader>d', group = 'debug' },
+        { '<leader>dp', group = 'profiler' },
+        { '<leader>e', group = 'explorer' },
+        { '<leader>f', group = 'file/find' },
+        { '<leader>g', group = 'git' },
+        { '<leader>gh', group = 'hunks' },
+        { '<leader>q', group = 'quit/session' },
+        { '<leader>s', group = 'search' },
+        { '<leader>u', group = 'ui' },
+        { '<leader>x', group = 'diagnostics/quicfix' },
+        { '<leader>[', group = 'prev' },
+        { '<leader>]', group = 'next' },
+        { 'g', group = 'goto' },
+        { '<leader>gs', group = 'surround' },
+        { '<leader>z', group = 'fold' },
         {
-          "<leader>b",
-          group = "buffer",
+          '<leader>b',
+          group = 'buffer',
           expand = function()
-            return require("which-key.extras").expand.buf()
+            return require('which-key.extras').expand.buf()
           end,
         },
         {
-          "<leader>w",
-          group = "windows",
-          proxy = "<C-w>",
+          '<leader>w',
+          group = 'windows',
+          proxy = '<C-w>',
           expand = function()
-            return require("which-key.extras").expand.win()
+            return require('which-key.extras').expand.win()
           end,
         },
-        { "gx", desc = "Open with system app" },
+        { 'gx', desc = 'Open with system app' },
       },
     },
     keys = {
       {
-        "<leader>?",
+        '<leader>?',
         function()
-          require("which-key").show({ global = false })
+          require('which-key').show({ global = false })
         end,
-        desc = "Buffer Local Keymaps (Which-key)",
+        desc = 'Buffer Local Keymaps (Which-key)',
       },
       {
-        "<c-w><space>",
+        '<c-w><space>',
         function()
-          require("which-key").show({ keys = "<c-w>", loop = true })
+          require('which-key').show({ keys = '<c-w>', loop = true })
         end,
-        desc = "Window Hydra Mode (Which-key)",
+        desc = 'Window Hydra Mode (Which-key)',
       },
     },
   },

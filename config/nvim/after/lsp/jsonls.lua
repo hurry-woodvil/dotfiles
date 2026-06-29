@@ -1,1 +1,1 @@
-return require("config.language.json").server_config()
+return require('config.language.json').server_config()

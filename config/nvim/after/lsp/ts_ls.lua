@@ -1,1 +1,1 @@
-return require("config.language.typescript").server_config
+return require('config.language.typescript').server_config

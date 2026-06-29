@@ -1,1 +1,1 @@
-return require("config.language.emmet").server_config
+return require('config.language.emmet').server_config

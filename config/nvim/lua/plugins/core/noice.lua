@@ -1,86 +1,86 @@
 return {
   {
-    "folke/noice.nvim",
-    event = "VeryLazy",
+    'folke/noice.nvim',
+    event = 'VeryLazy',
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
     },
     keys = {
-      { "<leader>sn", "", desc = "+noice" },
+      { '<leader>sn', '', desc = '+noice' },
       {
-        "<S-Enter>",
+        '<S-Enter>',
         function()
-          require("noice").redirect(vim.fn.getcmdline())
+          require('noice').redirect(vim.fn.getcmdline())
         end,
-        mode = "c",
-        desc = "Redirect Cmdline",
+        mode = 'c',
+        desc = 'Redirect Cmdline',
       },
       {
-        "<leader>snl",
+        '<leader>snl',
         function()
-          require("noice").cmd("last")
+          require('noice').cmd('last')
         end,
-        desc = "Noice: Last Message",
+        desc = 'Noice: Last Message',
       },
       {
-        "<leader>snh",
+        '<leader>snh',
         function()
-          require("noice").cmd("history")
+          require('noice').cmd('history')
         end,
-        desc = "Noice: History",
+        desc = 'Noice: History',
       },
       {
-        "<leader>sna",
+        '<leader>sna',
         function()
-          require("noice").cmd("all")
+          require('noice').cmd('all')
         end,
-        desc = "Noice: All",
+        desc = 'Noice: All',
       },
       {
-        "<leader>snd",
+        '<leader>snd',
         function()
-          require("noice").cmd("dismiss")
+          require('noice').cmd('dismiss')
         end,
-        desc = "Noice: Dismiss All",
+        desc = 'Noice: Dismiss All',
       },
       {
-        "<leader>snt",
+        '<leader>snt',
         function()
-          require("noice").cmd("pick")
+          require('noice').cmd('pick')
         end,
-        desc = "Noice: Picker (Telescope/FzfLua)",
+        desc = 'Noice: Picker (Telescope/FzfLua)',
       },
       {
-        "<c-f>",
+        '<c-f>',
         function()
-          if not require("noice.lsp").scroll(4) then
-            return "<c-f>"
+          if not require('noice.lsp').scroll(4) then
+            return '<c-f>'
           end
         end,
         silent = true,
         expr = true,
-        desc = "Noice: Scroll Forward",
-        mode = { "i", "n", "s" },
+        desc = 'Noice: Scroll Forward',
+        mode = { 'i', 'n', 's' },
       },
       {
-        "<c-b>",
+        '<c-b>',
         function()
-          if not require("noice.lsp").scroll(-4) then
-            return "<c-b>"
+          if not require('noice.lsp').scroll(-4) then
+            return '<c-b>'
           end
         end,
         silent = true,
         expr = true,
-        desc = "Noice: Scroll Backward",
-        mode = { "i", "n", "s" },
+        desc = 'Noice: Scroll Backward',
+        mode = { 'i', 'n', 's' },
       },
     },
     opts = {
       lsp = {
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_liens"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
+          ['vim.lsp.util.convert_input_to_markdown_liens'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
         },
         signature = {
           enabled = false,
@@ -94,18 +94,18 @@ return {
         lsp_doc_border = false,
       },
       config = function(_, opts)
-        if vim.o.filetype == "lazy" then
+        if vim.o.filetype == 'lazy' then
           vim.cmd([[messages clear]])
         end
-        require("noice").setup(opts)
+        require('noice').setup(opts)
       end,
       cmdline = {
         enabled = true,
-        view = "cmdline_popup",
+        view = 'cmdline_popup',
       },
       message = {
         enabled = true,
-        view = "popup",
+        view = 'popup',
       },
     },
   },

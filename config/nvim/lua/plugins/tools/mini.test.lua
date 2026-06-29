@@ -1,3 +1,3 @@
 return {
-  { "nvim-mini/mini.test", version = "*" },
+  { 'nvim-mini/mini.test', version = '*' },
 }

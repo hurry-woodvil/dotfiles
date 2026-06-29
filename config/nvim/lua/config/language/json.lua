@@ -1,9 +1,9 @@
 local M = {}
 
-M.server_name = "jsonls"
+M.server_name = 'jsonls'
 
 M.server_config = function()
-  local schemastore = require("schemastore")
+  local schemastore = require('schemastore')
   return {
     settings = {
       json = {
@@ -15,6 +15,6 @@ M.server_config = function()
   }
 end
 
-M.formatter_name = "prettier"
+M.formatter_name = 'prettierd'
 
 return M

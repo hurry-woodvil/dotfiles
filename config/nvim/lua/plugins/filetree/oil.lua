@@ -1,48 +1,48 @@
 return {
   {
-    "stevearc/oil.nvim",
+    'stevearc/oil.nvim',
     lazy = false,
     dependencies = {
-      "nvim-mini/mini.icons",
+      'nvim-mini/mini.icons',
     },
     keys = {
-      { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+      { '-', '<cmd>Oil<cr>', desc = 'Open parent directory' },
       {
-        "<leader>e",
+        '<leader>e',
         function()
-          require("oil").open(vim.fn.expand("%:p:h"))
+          require('oil').open(vim.fn.expand('%:p:h'))
         end,
-        desc = "Open Oil at current file",
+        desc = 'Open Oil at current file',
       },
     },
     opts = {
       columns = {
-        { "icon" },
-        { "size" },
-        { "mtime" },
+        { 'icon' },
+        { 'size' },
+        { 'mtime' },
       },
       win_options = {
-        signcolumn = "yes:2",
+        signcolumn = 'yes:2',
       },
       skip_confirm_for_simple_edits = true,
       delete_to_trash = true,
     },
   },
   {
-    "refractalize/oil-git-status.nvim",
+    'refractalize/oil-git-status.nvim',
     dependencies = {
-      "stevearc/oil.nvim",
+      'stevearc/oil.nvim',
     },
     opts = {},
   },
   {
-    "benomahony/oil-git.nvim",
-    dependencies = { "stevearc/oil.nvim" },
+    'benomahony/oil-git.nvim',
+    dependencies = { 'stevearc/oil.nvim' },
     opts = {},
   },
   {
-    "JezerM/oil-lsp-diagnostics.nvim",
-    dependencies = { "stevearc/oil.nvim" },
+    'JezerM/oil-lsp-diagnostics.nvim',
+    dependencies = { 'stevearc/oil.nvim' },
     opts = {},
   },
 }

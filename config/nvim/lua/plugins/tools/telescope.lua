@@ -1,62 +1,62 @@
 return {
   {
-    "nvim-telescope/telescope.nvim",
+    'nvim-telescope/telescope.nvim',
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      'nvim-lua/plenary.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-    cmd = "Telescope",
+    cmd = 'Telescope',
     keys = {
       {
-        "<leader>ff",
+        '<leader>ff',
         function()
-          require("telescope.builtin").find_files()
+          require('telescope.builtin').find_files()
         end,
-        desc = "Find files",
+        desc = 'Find files',
       },
       {
-        "<leader>fg",
+        '<leader>fg',
         function()
-          require("telescope.builtin").live_grep()
+          require('telescope.builtin').live_grep()
         end,
-        desc = "Live grep",
+        desc = 'Live grep',
       },
       {
-        "<leader>fr",
+        '<leader>fr',
         function()
-          require("telescope.builtin").oldfiles()
+          require('telescope.builtin').oldfiles()
         end,
-        desc = "Recent files",
+        desc = 'Recent files',
       },
       {
-        "<leader>fb",
+        '<leader>fb',
         function()
-          require("telescope.builtin").buffers()
+          require('telescope.builtin').buffers()
         end,
-        desc = "Buffers",
+        desc = 'Buffers',
       },
       {
-        "<leader>fG",
+        '<leader>fG',
         function()
-          require("telescope.builtin").git_files()
+          require('telescope.builtin').git_files()
         end,
-        desc = "Git files",
+        desc = 'Git files',
       },
     },
     opts = function()
-      local actions = require("telescope.actions")
+      local actions = require('telescope.actions')
 
       return {
         defaults = {
-          prompt_prefix = " ",
-          selection_caret = " ",
-          path_display = { "smart" },
+          prompt_prefix = ' ',
+          selection_caret = ' ',
+          path_display = { 'smart' },
 
           mappings = {
             i = {
-              ["<C-j>"] = actions.move_selection_next,
-              ["<C-k>"] = actions.move_selection_previous,
-              ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+              ['<C-j>'] = actions.move_selection_next,
+              ['<C-k>'] = actions.move_selection_previous,
+              ['<C-q>'] = actions.send_to_qflist + actions.open_qflist,
             },
           },
         },
@@ -65,15 +65,15 @@ return {
             fuzzy = true,
             override_generic_sorter = true,
             override_file_sorter = true,
-            case_mode = "smart_case",
+            case_mode = 'smart_case',
           },
         },
       }
     end,
     config = function(_, opts)
-      local telescope = require("telescope")
+      local telescope = require('telescope')
       telescope.setup(opts)
-      pcall(telescope.load_extension, "fzf")
+      pcall(telescope.load_extension, 'fzf')
     end,
   },
 }

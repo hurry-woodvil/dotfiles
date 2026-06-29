@@ -7,7 +7,7 @@
 -- }
 return {
   {
-    dir = "~/dev/projects-lua/orbit.nvim/",
+    dir = '~/dev/projects-lua/orbit.nvim/',
     lazy = false,
     opts = {},
   },

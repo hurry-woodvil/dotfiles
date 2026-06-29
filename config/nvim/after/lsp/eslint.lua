@@ -1,1 +1,1 @@
-return require("config.language.eslint").server_config
+return require('config.language.eslint').server_config

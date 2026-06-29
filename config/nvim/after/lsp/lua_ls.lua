@@ -1,1 +1,1 @@
-return require("config.language.lua").server_config
+return require('config.language.lua').server_config

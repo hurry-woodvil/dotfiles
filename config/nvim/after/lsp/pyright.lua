@@ -1,1 +1,1 @@
-return require("config.language.python").server_config
+return require('config.language.python').server_config

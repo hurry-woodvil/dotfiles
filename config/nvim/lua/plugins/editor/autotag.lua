@@ -1,7 +1,7 @@
 return {
   {
-    "windwp/nvim-ts-autotag",
-    event = { "BufReadPre", "BufNewFile" },
+    'windwp/nvim-ts-autotag',
+    event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       opts = {
         enable_close = true,

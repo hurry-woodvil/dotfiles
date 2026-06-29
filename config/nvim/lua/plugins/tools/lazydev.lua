@@ -1,14 +1,14 @@
 return {
   {
-    "folke/lazydev.nvim",
+    'folke/lazydev.nvim',
     dependencies = {
-      "DrKJeff16/wezterm-types",
+      'DrKJeff16/wezterm-types',
     },
-    ft = "lua",
+    ft = 'lua',
     opts = {
       library = {
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-        { path = "wezterm-types", words = { "wezterm" } },
+        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        { path = 'wezterm-types', words = { 'wezterm' } },
       },
     },
   },

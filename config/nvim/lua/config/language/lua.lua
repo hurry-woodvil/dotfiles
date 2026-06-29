@@ -1,16 +1,16 @@
 local M = {}
 
-M.server_name = "lua_ls"
+M.server_name = 'lua_ls'
 
 M.server_config = {
   settings = {
     Lua = {
       runtime = {
-        version = "LuaJIT",
+        version = 'LuaJIT',
       },
       workspace = {
         library = {
-          vim.env.VIMRUNTIME .. "/lua",
+          vim.env.VIMRUNTIME .. '/lua',
         },
         checkThirdParty = false,
       },
@@ -18,12 +18,12 @@ M.server_config = {
         enable = false,
       },
       doc = {
-        privateName = { "^_" },
+        privateName = { '^_' },
       },
     },
   },
 }
 
-M.formatter_name = "stylua"
+M.formatter_name = 'stylua'
 
 return M

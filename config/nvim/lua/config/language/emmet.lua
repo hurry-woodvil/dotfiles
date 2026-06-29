@@ -1,18 +1,18 @@
 local M = {}
 
-M.server_name = "emmet_language_server"
+M.server_name = 'emmet_language_server'
 
 M.server_config = {
   filetypes = {
-    "html",
-    "css",
-    "scss",
-    "javascriptreact",
-    "typescriptreact",
+    'html',
+    'css',
+    'scss',
+    'javascriptreact',
+    'typescriptreact',
   },
 }
 
-M.formatter_name = ""
+M.formatter_name = ''
 
 M.adapter = {}
 

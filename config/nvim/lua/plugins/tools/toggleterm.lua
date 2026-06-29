@@ -1,11 +1,11 @@
 return {
   {
-    "akinsho/toggleterm.nvim",
-    cmd = { "ToggleTerm", "TermExec" },
+    'akinsho/toggleterm.nvim',
+    cmd = { 'ToggleTerm', 'TermExec' },
     keys = {
-      { "<leader>tt", "<cmd>ToggleTerm direction=float<cr>", desc = "Terminal (float)" },
-      { "<leader>th", "<cmd>ToggleTerm size=15 direction=horizontal<cr>", desc = "Terminal (horizontal)" },
-      { "<leader>tv", "<cmd>ToggleTerm size=60 direction=vertical<cr>", desc = "Terminal (vertical)" },
+      { '<leader>tt', '<cmd>ToggleTerm direction=float<cr>', desc = 'Terminal (float)' },
+      { '<leader>th', '<cmd>ToggleTerm size=15 direction=horizontal<cr>', desc = 'Terminal (horizontal)' },
+      { '<leader>tv', '<cmd>ToggleTerm size=60 direction=vertical<cr>', desc = 'Terminal (vertical)' },
     },
     opts = {
       size = 20,
@@ -18,9 +18,9 @@ return {
       insert_mappings = true,
       persist_size = true,
       persist_mode = true,
-      direction = "float",
+      direction = 'float',
       float_opts = {
-        border = "rounded",
+        border = 'rounded',
         width = function()
           return math.floor(vim.o.columns * 0.9)
         end,
@@ -32,35 +32,35 @@ return {
       shell = vim.o.shell,
     },
     config = function(_, opts)
-      require("toggleterm").setup(opts)
+      require('toggleterm').setup(opts)
 
-      vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Terminal normal mode" })
-      vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { desc = "Move left" })
-      vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { desc = "Move down" })
-      vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { desc = "Move up" })
-      vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { desc = "Move right" })
+      vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Terminal normal mode' })
+      vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], { desc = 'Move left' })
+      vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], { desc = 'Move down' })
+      vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], { desc = 'Move up' })
+      vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], { desc = 'Move right' })
 
-      local Terminal = require("toggleterm.terminal").Terminal
+      local Terminal = require('toggleterm.terminal').Terminal
 
       local node = Terminal:new({
-        cmd = "node",
+        cmd = 'node',
         hidden = true,
-        direction = "float",
+        direction = 'float',
       })
 
-      vim.keymap.set("n", "<leader>tn", function()
+      vim.keymap.set('n', '<leader>tn', function()
         node:toggle()
-      end, { desc = "Node REPL" })
+      end, { desc = 'Node REPL' })
 
       local cargo = Terminal:new({
-        cmd = "cargo run",
+        cmd = 'cargo run',
         hidden = true,
-        direction = "float",
+        direction = 'float',
       })
 
-      vim.keymap.set("n", "<leader>tr", function()
+      vim.keymap.set('n', '<leader>tr', function()
         cargo:toggle()
-      end, { desc = "Cargo run" })
+      end, { desc = 'Cargo run' })
     end,
   },
 }
