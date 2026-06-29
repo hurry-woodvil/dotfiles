@@ -1,15 +1,50 @@
 return {
   {
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'b0o/schemastore.nvim',
+    },
     config = function()
+      local lsp = vim.lsp
+
+      -- html LSP ON
+      lsp.enable(require('config.language.html').server_name)
+
+      -- css LSP ON
+      lsp.enable(require('config.language.css').server_name)
+
+      -- tailwindcss LSP ON
+      lsp.enable(require('config.language.tailwindcss').server_name)
+
+      -- emmet LSP ON
+      lsp.enable(require('config.language.emmet').server_name)
+
+      -- json LSP ON
+      lsp.enable(require('config.language.json').server_name)
+
+      -- toml LSP ON
+      lsp.enable(require('config.language.toml').server_name)
+
+      -- lua LSP ON
+      lsp.enable(require('config.language.lua').server_name)
+
       -- typescript LSP ON
-      vim.lsp.enable(require("config.language.typescript").server_name)
+      lsp.enable(require('config.language.typescript').server_name)
 
       -- angular LSP ON
-      vim.lsp.enable(require("config.language.angular").server_name)
+      lsp.enable(require('config.language.angular').server_name)
 
       -- rust LSP ON
-      vim.lsp.enable(require("config.language.rust").server_name)
+      lsp.enable(require('config.language.rust').server_name)
+
+      -- python LSP ON
+      lsp.enable(require('config.language.python').server_name)
+
+      -- eslint_d LSP ON
+      lsp.enable(require('config.language.emmet').server_name)
+
+      -- prettierd LSP ON
+      lsp.enable(require('config.language.prettierd').server_name)
 
       -- diagnostic config
       vim.diagnostic.config({
@@ -17,81 +52,19 @@ return {
         update_in_insert = false,
         virtual_text = {
           spacing = 4,
-          source = "if_many",
-          prefix = "●",
+          source = 'if_many',
+          prefix = '●',
         },
         severity_sort = true,
         signs = {
           text = {
-            [vim.diagnostic.severity.ERROR] = " ",
-            [vim.diagnostic.severity.WARN] = " ",
-            [vim.diagnostic.severity.HINT] = " ",
-            [vim.diagnostic.severity.INFO] = " ",
+            [vim.diagnostic.severity.ERROR] = ' ',
+            [vim.diagnostic.severity.WARN] = ' ',
+            [vim.diagnostic.severity.HINT] = ' ',
+            [vim.diagnostic.severity.INFO] = ' ',
           },
         },
       })
     end,
-  },
-  {
-    "mason-org/mason-lspconfig.nvim",
-    dependencies = {
-      "mason-org/mason.nvim",
-      "neovim/nvim-lspconfig",
-      "b0o/schemastore.nvim",
-    },
-    opts = {
-      ensure_installed = {
-        require("config.language.lua").server_name,
-        require("config.language.toml").server_name,
-        require("config.language.json").server_name,
-        require("config.language.html").server_name,
-        require("config.language.css").server_name,
-        require("config.language.emmet").server_name,
-        require("config.language.tailwindcss").server_name,
-        require("config.language.golang").server_name,
-        require("config.language.python").server_name,
-      },
-      automatic_enable = {
-        exclude = {
-          require("config.language.typescript").server_name,
-          require("config.language.angular").server_name,
-          require("config.language.rust").server_name,
-          require("config.language.rust").formatter_name,
-        },
-      },
-    },
-    ---@param opts MasonLspconfigSettings
-    config = function(_, opts)
-      require("mason-lspconfig").setup(opts)
-    end,
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    dependencies = {
-      "mason-org/mason.nvim",
-    },
-    opts = {
-      ensure_installed = vim.list_extend({
-        require("config.language.lua").formatter_name,
-        require("config.language.typescript").formatter_name,
-        require("config.language.javascript").formatter_name,
-        require("config.language.html").formatter_name,
-        require("config.language.css").formatter_name,
-        require("config.language.eslint").server_name,
-        require("config.language.python").formatter_name,
-      }, require("config.language.golang").formatter_name),
-    },
-  },
-  {
-    "mason-org/mason.nvim",
-    opts = {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    },
   },
 }
