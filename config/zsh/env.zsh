@@ -1,7 +1,14 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# rustup
+export PATH="$(brew --prefix rustup)/bin:$PATH"
+
+# uv
+export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
