@@ -8,7 +8,12 @@ function M.apply(config)
   config.use_ime = true
   config.window_background_opacity = 0.85
   config.macos_window_background_blur = 20
-  config.font = wezterm.font("UDEV Gothic 35")
+  config.font = wezterm.font_with_fallback({
+    "UDEV Gothic 35",
+    "Symbols Nerd Font Mono",
+    "JetBrainsMono Nerd Font",
+    "Noto Color Emoji",
+  })
   config.term = "wezterm"
   config.window_decorations = "RESIZE"
   config.show_tabs_in_tab_bar = true
