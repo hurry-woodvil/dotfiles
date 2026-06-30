@@ -17,6 +17,7 @@ return {
         'json',
         'go',
         'python',
+        'yaml',
       },
       indent = { enable = true },
       highlight = {
@@ -43,6 +44,7 @@ return {
         'json',
         'go',
         'python',
+        'yaml',
       }):wait(30000)
 
       vim.api.nvim_create_autocmd('FileType', {

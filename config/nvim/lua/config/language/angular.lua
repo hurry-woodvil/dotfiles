@@ -42,4 +42,6 @@ M.server_config = {
   end,
 }
 
+M.formatter = { 'prettierd', 'prettier' }
+
 return M

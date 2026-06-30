@@ -8,6 +8,11 @@ M.formatter_name = 'prettierd'
 
 M.adapter = {}
 
-M.configuration = {}
+M.configuration = {
+  filetypes = {
+    'html',
+    'htmlangular',
+  },
+}
 
 return M

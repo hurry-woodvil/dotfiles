@@ -1,3 +1,5 @@
+local formatter = require('utils').formatter
+
 return {
   {
     'stevearc/conform.nvim',
@@ -16,6 +18,8 @@ return {
         json = { require('config.language.json').formatter_name },
         jsonc = { require('config.language.json').formatter_name },
         python = { require('config.language.python').confirm_formatter_name },
+        htmlangular = formatter(require('config.language.angular').formatter),
+        yaml = formatter(require('config.language.yaml').formatter_name),
       },
       format_on_save = {
         timeout_ms = 500,

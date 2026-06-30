@@ -22,6 +22,9 @@ return {
       -- json LSP ON
       lsp.enable(require('config.language.json').server_name)
 
+      -- yaml LSP ON
+      lsp.enable(require('config.language.yaml').server_name)
+
       -- toml LSP ON
       lsp.enable(require('config.language.toml').server_name)
 
