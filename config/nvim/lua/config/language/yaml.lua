@@ -10,18 +10,18 @@ M.server_config = {
       validate = true,
       completion = true,
       hover = true,
-      schemastore = {
+      schemaStore = {
         enable = true,
       },
       schemas = {
         ['https://json.schemastore.org/github-workflow.json'] = {
-          '.github/workflow/*.{yml,yaml}',
+          '.github/workflows/*.{yml,yaml}',
         },
       },
     },
     redhat = {
       telemetry = {
-        enable = false,
+        enabled = false,
       },
     },
   },
