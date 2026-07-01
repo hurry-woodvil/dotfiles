@@ -17,6 +17,6 @@ M.server_config = {
   },
 }
 
-M.formatter_name = 'prettierd'
+M.formatter = { 'prettierd', 'prettier' }
 
 return M

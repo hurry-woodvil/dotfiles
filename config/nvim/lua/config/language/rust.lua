@@ -4,7 +4,7 @@ M.server_name = 'rust_analyzer'
 
 M.server_config = {}
 
-M.formatter_name = 'rustfmt'
+M.formatter = 'rustfmt'
 
 M.adapter = {
   codelldb = {

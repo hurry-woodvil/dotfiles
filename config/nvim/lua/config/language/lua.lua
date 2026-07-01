@@ -24,6 +24,6 @@ M.server_config = {
   },
 }
 
-M.formatter_name = 'stylua'
+M.formatter = 'stylua'
 
 return M

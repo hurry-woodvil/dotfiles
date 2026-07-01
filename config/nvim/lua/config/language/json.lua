@@ -15,6 +15,6 @@ M.server_config = function()
   }
 end
 
-M.formatter_name = 'prettierd'
+M.formatter = { 'prettierd', 'prettier' }
 
 return M

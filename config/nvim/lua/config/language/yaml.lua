@@ -2,7 +2,7 @@ local M = {}
 
 M.server_name = 'yamlls'
 
-M.formatter_name = { 'prettierd', 'prettier' }
+M.formatter = { 'prettierd', 'prettier' }
 
 M.server_config = {
   settings = {

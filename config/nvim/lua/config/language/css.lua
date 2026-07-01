@@ -4,7 +4,7 @@ M.server_name = 'cssls'
 
 M.server_config = {}
 
-M.formatter_name = 'prettierd'
+M.formatter = { 'prettierd', 'prettier' }
 
 M.adapter = {}
 

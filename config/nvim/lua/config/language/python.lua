@@ -19,7 +19,7 @@ M.server_config = {
 
 M.formatter_name = 'ruff'
 
-M.confirm_formatter_name = 'ruff_format'
+M.formatter = 'ruff_format'
 
 M.adapter = {
   python = {

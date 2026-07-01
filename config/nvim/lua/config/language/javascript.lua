@@ -2,6 +2,6 @@ local M = {}
 
 M.server_name = 'ts_ls'
 
-M.formatter_name = 'prettierd'
+M.formatter = { 'prettierd', 'prettier' }
 
 return M
