@@ -9,7 +9,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     local keymaps = require('config.keymaps')
-    keymaps.reset(bufnr)
+
+    if not vim.b[bufnr].user_lsp_keymaps_reset then
+      keymaps.reset(bufnr)
+      vim.b[bufnr].user_lsp_keymaps_reset = true
+    end
+
     keymaps.on_attach(client, bufnr)
   end,
 })
