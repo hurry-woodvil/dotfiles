@@ -18,6 +18,7 @@ return {
         'go',
         'python',
         'yaml',
+        'angular',
       },
       indent = { enable = true },
       highlight = {
@@ -45,6 +46,7 @@ return {
         'go',
         'python',
         'yaml',
+        'angular',
       }):wait(30000)
 
       vim.api.nvim_create_autocmd('FileType', {
